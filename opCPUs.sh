@@ -55,13 +55,13 @@ for i in $(eval echo "{1..$END}"); do
     if [ $IS_ONLINE -eq 1 ]; then
         #echo "$i is online"
         if [ $i -ge $NUM ]; then
-            #echo "mudando $i para offline"
+            #echo "changing $i to offline"
             echo 0 > /sys/devices/system/cpu/cpu$i/online
         fi
     else
         #echo "$i is offline"
         if [ $i -lt $NUM ]; then
-            #echo "mudando $i para online"
+            #echo "changing $i to online"
             echo 1 > /sys/devices/system/cpu/cpu$i/online
         fi
     fi
